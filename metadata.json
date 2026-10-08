@@ -1,0 +1,8 @@
+{
+  "name": "salm-loha",
+  "description": "Imported from GitHub: mediayaseer-arch/salma-serv",
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ],
+  "permissions": []
+}

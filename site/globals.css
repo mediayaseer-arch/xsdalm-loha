@@ -1,0 +1,414 @@
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Cairo:wght@400;500;600;700;800;900&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Almarai", sans-serif;
+}
+
+:root {
+  --foreground-rgb: 36, 50, 64;
+  --background-start-rgb: 243, 246, 249;
+  --background-end-rgb: 243, 246, 249;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+
+
+@layer base {
+  :root {
+    --background: 210 25% 96%;
+    --foreground: 210 29% 20%;
+    --card: 0 0% 100%;
+    --card-foreground: 210 29% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 29% 20%;
+    --primary: 211 79% 46%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 22% 93%;
+    --secondary-foreground: 210 29% 20%;
+    --muted: 210 22% 93%;
+    --muted-foreground: 210 11% 45%;
+    --accent: 211 79% 46%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 70% 52%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 210 20% 86%;
+    --input: 210 20% 86%;
+    --ring: 211 79% 46%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+/* Keep below-the-fold sections out of the initial render work. */
+.below-fold {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 720px;
+}
+
+/* LEO operational console skin */
+.leo-console {
+  --leo-blue: #1976d2;
+  --leo-ink: #263746;
+  --leo-muted: #718090;
+  --leo-line: #dbe3eb;
+  --leo-workspace: #f3f6f9;
+  font-family: var(--font-cairo), "Cairo", sans-serif;
+}
+
+.leo-console,
+.leo-console * {
+  box-sizing: border-box;
+}
+
+.leo-console .text-slate-100,
+.leo-console .text-slate-200 {
+  color: var(--leo-ink) !important;
+}
+
+.leo-console .text-slate-300,
+.leo-console .text-slate-400,
+.leo-console .text-slate-500 {
+  color: var(--leo-muted) !important;
+}
+
+.leo-console .text-cyan-300,
+.leo-console .text-cyan-400,
+.leo-console .text-cyan-500 {
+  color: var(--leo-blue) !important;
+}
+
+.leo-console .bg-slate-800,
+.leo-console .bg-slate-800\/40,
+.leo-console .bg-slate-800\/60,
+.leo-console .bg-slate-900\/30,
+.leo-console .bg-slate-900\/40 {
+  background-color: #f0f4f7 !important;
+}
+
+.leo-console .border-slate-700,
+.leo-console .border-slate-800\/40,
+.leo-console .border-slate-800\/60 {
+  border-color: var(--leo-line) !important;
+}
+
+.leo-console input {
+  color: var(--leo-ink) !important;
+}
+
+.leo-console input::placeholder {
+  color: #95a2af !important;
+}
+
+.leo-console button {
+  transition: background-color .16s ease, border-color .16s ease, color .16s ease, transform .16s ease;
+}
+
+.leo-console button:active {
+  transform: translateY(1px);
+}
+
+.leo-console .leo-topbar {
+  box-shadow: 0 1px 5px rgba(42, 61, 80, .08);
+}
+
+.leo-console .leo-panel {
+  box-shadow: 0 1px 3px rgba(44, 63, 82, .07);
+}
+
+.leo-console .leo-scroll::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+.leo-console .leo-scroll::-webkit-scrollbar-thumb {
+  background: #c4ced8;
+  border-radius: 8px;
+}
+
+.leo-console .leo-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@media (max-width: 900px) {
+  .leo-console .leo-header-actions span {
+    display: none;
+  }
+}
+
+/* Official inspection booking form treatment */
+.template-field {
+  width: 100%;
+  min-height: 40px;
+  border: 1px solid #9da4ae;
+  border-radius: 0.5rem;
+  background: #fff;
+  color: #272c2e;
+  font-family: var(--font-cairo), "Cairo", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 8px 12px;
+  outline: none;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.template-field::placeholder {
+  color: #878a8b;
+}
+
+.template-field:focus {
+  border-color: #1b8354;
+  box-shadow: 0 0 0 2px rgba(27, 131, 84, 0.12);
+}
+
+.phone-country-prefix {
+  display: flex;
+  width: 112px;
+  min-width: 112px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 1px solid #9da4ae;
+  border-radius: 0.5rem;
+  background: #fff;
+  color: #272c2e;
+  direction: ltr;
+}
+
+select.template-field {
+  appearance: auto;
+}
+
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Prevent Safari iOS auto-zoom on input focus */
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* ─── WhatsApp/Telegram-style Chat Dashboard (Dark Mode) ─────────────────── */
+
+/* Dark chat background pattern */
+.chat-pattern-dark {
+  background-color: #0b141a;
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Custom scrollbar for dark mode */
+.chat-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chat-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.chat-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Hidden scrollbar utility (for horizontal stats strip) */
+.chat-scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.chat-scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+/* ─── Flashing / Pulsing Animations for Approval Required ────────────────── */
+
+/* Conversation item background flash */
+.flash-approval {
+  animation: flashApprovalBg 2s ease-in-out infinite;
+}
+
+@keyframes flashApprovalBg {
+
+  0%,
+  100% {
+    background-color: rgba(127, 29, 29, 0);
+  }
+
+  50% {
+    background-color: rgba(127, 29, 29, 0.15);
+  }
+}
+
+/* Detail header flash (subtle border glow) */
+.flash-header {
+  animation: flashHeader 2s ease-in-out infinite;
+  border-bottom: 2px solid transparent;
+}
+
+@keyframes flashHeader {
+
+  0%,
+  100% {
+    border-bottom-color: transparent;
+    box-shadow: none;
+  }
+
+  50% {
+    border-bottom-color: rgba(239, 68, 68, 0.6);
+    box-shadow: 0 4px 20px rgba(239, 68, 68, 0.15);
+  }
+}
+
+/* Section card flash (border glow) */
+.flash-section {
+  animation: flashSection 2s ease-in-out infinite;
+}
+
+@keyframes flashSection {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+  }
+
+  50% {
+    box-shadow: 0 0 15px 2px rgba(239, 68, 68, 0.2);
+  }
+}
+
+/* Badge flash */
+.flash-badge {
+  animation: flashBadge 1.5s ease-in-out infinite;
+}
+
+@keyframes flashBadge {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+/* Icon flash (bell icon) */
+.flash-icon {
+  animation: flashIcon 1.5s ease-in-out infinite;
+}
+
+@keyframes flashIcon {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(15deg);
+  }
+
+  50% {
+    opacity: 0.6;
+    transform: rotate(-15deg);
+  }
+
+  75% {
+    transform: rotate(10deg);
+  }
+}
+
+/* Pill flash (for stats strip) */
+.flash-pill {
+  animation: flashPill 2s ease-in-out infinite;
+}
+
+@keyframes flashPill {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+  }
+
+  50% {
+    box-shadow: 0 0 10px 2px rgba(239, 68, 68, 0.3);
+  }
+}
+
+/* ─── Visual Credit Card ─────────────────────────────────────────────────── */
+
+.credit-card-visual {
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.4),
+    0 2px 8px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.credit-card-visual:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 14px 40px rgba(0, 0, 0, 0.5),
+    0 4px 12px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}

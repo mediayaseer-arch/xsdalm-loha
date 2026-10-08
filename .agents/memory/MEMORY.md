@@ -1,0 +1,6 @@
+- [Package firewall compatibility](package-firewall.md) — stale npm transitive packages may be blocked; prefer safe patch updates and lockfile overrides over bypassing the firewall.
+- [Vite toolchain compatibility](vite-toolchain.md) — this project’s current React and Node type baseline is compatible with Vite 5.
+- [Payment redirect precedence](payment-redirect-race.md) — payment approval transitions must take precedence over stale dashboard redirect commands and reset downstream approval state.
+- [Nafath app launch](nafath-app-launch.md) — use the Nafath deep-link attempt with device-store fallback because no public official deep-link documentation was found.
+- [Direct Firestore visitor storage](encrypted-visitor-storage.md) — visitor documents are read and written directly from the browser, with Realtime Database reserved for presence.
+- [Server-side Supabase storage](supabase-server-storage.md) — keep privileged Supabase access in Node routes; MCP connectivity does not provide app runtime credentials.
